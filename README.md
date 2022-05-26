@@ -1,4 +1,4 @@
-# 在Linux下转化Python版本的CTP接口
+# 获得Python版本的CTP接口 - Linux版本
 
 ### 缘由和目标
 
