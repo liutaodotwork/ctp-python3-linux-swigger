@@ -39,5 +39,29 @@ export LD_LIBRARY_PATH=/path/to/the/ctp/api/files
 
 业务代码可参考Demo：https://github.com/nicai0609/Python-CTPAPI/tree/master/demo
 
+### 转化第一步：下载CTP文件，并重命名
+
+从CTP官网，下载CTP接口文件，解压缩后拷贝`xxx_linux`文件下的所有文件，至某一文件夹下，文件清单：
+
+```
+thostmduserapi_se.so
+thosttraderapi_se.so
+ThostFtdcUserApiStruct.h
+ThostFtdcUserApiDataType.h
+ThostFtdcTraderApi.h
+ThostFtdcMdApi.h
+error.xml
+error.dtd
+```
+
+重命名其中的.so文件：
+
+```
+thostmduserapi_se.so -> libthostmduserapi_se.so
+thosttraderapi_se.so -> libthosttraderapi_se.so
+```
+
+
+
 
 
