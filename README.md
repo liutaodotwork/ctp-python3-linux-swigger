@@ -83,7 +83,7 @@ thostmduserapi.i
 thosttraderapi.i
 ```
 
-#### thostmduserapi.i
+#### thostmduserapi.i文件内容：
 
 ```
 %module(directors="1") thostmduserapi
@@ -154,7 +154,7 @@ thosttraderapi.i
 %include "ThostFtdcMdApi.h"
 ```
 
-#### thosttraderapi.i
+#### thosttraderapi.i文件内容：
 
 ```
 %module(directors="1") thosttraderapi 
@@ -197,3 +197,14 @@ thosttraderapi.i
 %include "ThostFtdcTraderApi.h"
 ```
 
+分别运行命令，生成针对两个`.i`的中间文件：
+
+```
+swig -threads -py3 -c++ -python thostmduserapi.i
+```
+
+```
+swig -threads -py3 -c++ -python thosttraderapi.i
+```
+
+### 
