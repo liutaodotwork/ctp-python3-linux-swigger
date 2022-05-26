@@ -30,11 +30,13 @@ thostmduserapi.py
 thosttraderapi.py
 ```
 
-业务代码，放在与API文件相同目录下，并确保将该目录设置给环境变量`LD_LIBRARY_PATH`
+业务代码，放在与API文件相同目录下，并确保将该目录赋值给环境变量`LD_LIBRARY_PATH`
 
 ```
 export LD_LIBRARY_PATH=/path/to/the/ctp/api/files
 ```
 
-业务代码，参考Demo：https://github.com/nicai0609/Python-CTPAPI/tree/master/demo
+业务代码可参考Demo：https://github.com/nicai0609/Python-CTPAPI/tree/master/demo
+
+
 
