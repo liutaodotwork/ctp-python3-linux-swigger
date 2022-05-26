@@ -197,7 +197,7 @@ thosttraderapi.i
 %include "ThostFtdcTraderApi.h"
 ```
 
-分别运行命令，生成针对两个`.i`的中间文件：
+运行两次`swig`命令，生成针对两个`.i`的中间文件，命令如下：
 
 ```
 swig -threads -py3 -c++ -python thostmduserapi.i
@@ -207,4 +207,76 @@ swig -threads -py3 -c++ -python thostmduserapi.i
 swig -threads -py3 -c++ -python thosttraderapi.i
 ```
 
-### 
+### 转化第二步：创建make文件，完成转化
+
+在上一步创建的文件夹下，创建两个`make`文件：
+
+```
+make_mduserapi
+make_traderapi
+```
+
+#### make_mduserapi文件内容：
+
+```
+OBJS=thostmduserapi_wrap.o
+INCLUDE=-I./ -I/usr/local/include/python3.7m
+
+TARGET=_thostmduserapi.so
+CPPFLAG=-shared -fPIC
+CC=g++
+LDLIB=-L. -lthostmduserapi_se
+$(TARGET) : $(OBJS)
+	$(CC) $(CPPFLAG) $(INCLUDE) -o $(TARGET) $(OBJS) $(LDLIB)
+$(OBJS) : %.o : %.cxx
+	$(CC) -c -fPIC $(INCLUDE) $< -o $@
+clean:
+	-rm -f $(OBJS)
+	-rm -f $(TARGET)
+```
+
+#### make_mduserapi文件内容：
+
+```
+OBJS=thosttraderapi_wrap.o
+INCLUDE=-I./ -I/usr/local/include/python3.7m
+
+TARGET=_thosttraderapi.so
+CPPFLAG=-shared -fPIC
+CC=g++
+LDLIB=-L. -lthosttraderapi_se
+$(TARGET) : $(OBJS)
+	$(CC) $(CPPFLAG) $(INCLUDE) -o $(TARGET) $(OBJS) $(LDLIB)
+$(OBJS) : %.o : %.cxx
+	$(CC) -c -fPIC $(INCLUDE) $< -o $@
+clean:
+	-rm -f $(OBJS)
+	-rm -f $(TARGET)
+```
+
+运行两次`make`命令，生成两个`.so`文件，命令如下：
+
+```
+make -f make_mduserapi
+```
+
+```
+make -f make_traderapi
+```
+
+最终，生成两个新的.so文件，查找该文件夹下，挑选出以下文件，即可投入使用：
+
+```
+_thostmduserapi.so
+_thosttraderapi.so
+libthostmduserapi_se.so
+libthosttraderapi_se.so
+thostmduserapi.py
+thosttraderapi.py
+YOUR_SOURCE_CODE.py
+```
+
+### FAQ
+
+
+
