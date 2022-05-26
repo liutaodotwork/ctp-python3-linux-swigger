@@ -207,7 +207,7 @@ swig -threads -py3 -c++ -python thostmduserapi.i
 swig -threads -py3 -c++ -python thosttraderapi.i
 ```
 
-### 转化第二步：创建make文件，完成转化
+### 转化第三步：创建make文件，完成转化
 
 在上一步创建的文件夹下，创建两个`make`文件：
 
@@ -273,7 +273,6 @@ libthostmduserapi_se.so
 libthosttraderapi_se.so
 thostmduserapi.py
 thosttraderapi.py
-YOUR_SOURCE_CODE.py
 ```
 
 ### FAQ
