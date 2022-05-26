@@ -31,7 +31,7 @@ thosttraderapi.py
 YOUR_SOURCE_CODE.py
 ```
 
-业务代码文件（例如上述的：YOUR_SOURCE_CODE.py），放在与API文件相同目录下，并确保将该目录赋值给环境变量`LD_LIBRARY_PATH`
+业务代码文件（例如上述的`YOUR_SOURCE_CODE.py`），放在与API文件相同目录下，并确保将该目录赋值给环境变量`LD_LIBRARY_PATH`
 
 ```
 export LD_LIBRARY_PATH=/path/to/the/ctp/api/files
