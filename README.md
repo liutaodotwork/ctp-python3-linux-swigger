@@ -19,7 +19,7 @@
 
 ### 以终为始：投产文件清单
 
-转化成功后，投入生产使用的文件清单如下：
+转化成功后，投入生产使用的API相关的文件清单如下：
 
 ```
 _thostmduserapi.so
@@ -29,3 +29,12 @@ libthosttraderapi_se.so
 thostmduserapi.py
 thosttraderapi.py
 ```
+
+业务代码，放在与API文件相同目录下，并确保将该目录设置给环境变量`LD_LIBRARY_PATH`
+
+```
+export LD_LIBRARY_PATH=/path/to/the/ctp/api/files
+```
+
+业务代码，参考Demo：https://github.com/nicai0609/Python-CTPAPI/tree/master/demo
+
