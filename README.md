@@ -61,7 +61,18 @@ thostmduserapi_se.so -> libthostmduserapi_se.so
 thosttraderapi_se.so -> libthosttraderapi_se.so
 ```
 
+这一步完成后，得到一个文件夹，其下的文件清单：
 
+```
+libthostmduserapi_se.so
+libthosttraderapi_se.so
+ThostFtdcUserApiStruct.h
+ThostFtdcUserApiDataType.h
+ThostFtdcTraderApi.h
+ThostFtdcMdApi.h
+error.xml
+error.dtd
+```
 
 
 
